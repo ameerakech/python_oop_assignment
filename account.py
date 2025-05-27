@@ -78,11 +78,10 @@ class Account:
             return f"Minimum balance set to ${amount}"
 
     def close_account(self):
-        self.balance = 0
-        self.deposits.clear()
-        self.withdrawals.clear()
+        balance = 0
         self.transactions.clear()
-        self.minimum_balances = 0
+        return f"Account closed. All transactions have been cleared"
+       
 
 
 account1 = Account("Ameer")
@@ -92,7 +91,7 @@ print (account1.withdraw(200))
 print (account1.get_balance())
 print (account1.transfer(200,account2))
 print (account1.request_loan(500))
-print (account1.repay_loan(500))
+print (account1.repay_loan(100))
 print (account1.account_details())
 print (account1.change_owners_name("Victoria"))
 print (account1.account_statement())
